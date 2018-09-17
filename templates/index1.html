@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta http-equiv="Content-Type">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+    
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+
+<link rel="stylesheet" type="text/css" href="/static/style.css">
+
+<title>Detect Phishing Sites</title>
+                        
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script>
+<script>
+                        	$(window).load(function() {
+                        		$(".se-pre-con").fadeOut("slow");;
+                        	});
+
+</script>
+
+</head>
+
+<body>
+
+<div class="se-pre-con"></div>
+
+<div class="container-fluid"> 
+                                                      
+<form action="http://127.0.0.1:8060/request" method="post">
+
+<div id = "loading">
+    <img src = "/static/Preloader_3.gif"><br/>
+    <marquee behavior = "alternate" scrollamount = 7 width = 25% left-padding = 10px "><h3 style = "font-size:22pt;color:green">Processing Data...</h3></marquee>
+</div>
+	
+<input type="text" id="data" placeholder="Enter Url to Check" name="url" required>
+	<br/>
+    
+	<center><input type="submit" id = "submit" name = "submit" value ="Check"></center><br/>
+    
+
+
+</form>
+
+<div class="footer"
+<footer class="main-footer">
+				<p>Copyright &copy; 2018 Phishing Detection</p>
+			
+</footer>
+</div>
+
+
+<script type = "text/javascript">
+
+    $(document).ready(function(){
+            $("#submit").click(function(){
+                    $("#loading").show();
+                     var url = $("#data").val();
+            $.post("http://127.0.0.1:8060/request",{
+                    url: url},function(status){
+                            $("#loading").hide();
+                             <!--alert(status);-->
+                                  });
+                    });
+            });
+
+
+</script>
+</div>
+</body>
+</html>
